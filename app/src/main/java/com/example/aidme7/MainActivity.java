@@ -50,6 +50,8 @@ public class MainActivity extends AppCompatActivity {
 
                     if (newRowId != -1) {
                         Toast.makeText(MainActivity.this, "Registration successful!", Toast.LENGTH_SHORT).show();
+                        ExportToCsv.exportDatabaseToCsv(getApplicationContext(), "users");
+
                         Intent intent = new Intent(MainActivity.this, SignInActivity.class);
                         startActivity(intent);
                         finish(); // Optional: Close the RegisterActivity to prevent going back to it using the back button
